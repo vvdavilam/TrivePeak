@@ -1,0 +1,519 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100%; /* Ensures the body and html span the full height */
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #eef3f7;
+    color: #444;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #1c1f26;
+    padding: 20px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100vh; /* Full height of viewport */
+    position: fixed; /* Stays fixed on the left */
+    top: 0;
+    left: 0;
+}
+
+.sidebar .logo img {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.menu-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    filter: invert(1);
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #b8bcc7;
+    font-size: 16px;
+}
+
+.menu ul li a:hover {
+    color: #fff;
+    font-weight: bold;
+}
+
+.menu ul .submenu {
+    display: none;
+    padding-left: 30px;
+    margin-top: 5px;
+}
+
+/* Submenu */
+.menu ul .submenu {
+    display: none; 
+    padding-left: 20px; 
+    margin-top: 2px; 
+    list-style: none;
+    margin-bottom: 2px;
+}
+
+.menu ul .submenu a {
+    text-decoration: none;
+    color: #b8bcc7; 
+    font-size: 14px; 
+    display: block;
+    padding: 10px 15px; 
+    margin-bottom: 2px; 
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.menu ul .submenu a:hover {
+    color: #fff; 
+}
+
+/* Show submenu when parent is hovered */
+.menu ul li:hover > .submenu {
+    display: block; 
+}
+
+.logout {
+    margin-top: 50px;
+}
+
+.logout a {
+    text-decoration: none;
+    color: #e74c3c;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logout a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    margin-left: 270px; /* Align next to sidebar */
+    width: calc(100% - 125px); /* Adjust width based on sidebar */
+    background-color: white;
+    min-height: 100%; 
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f7f9fc;
+    border-bottom: 1px solid #ddd;
+    margin: -20px -20px 20px -20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+
+.user-info img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Content Section */
+.content {
+    flex: 1;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #f9fafc;
+    border-radius: 10px;
+}
+
+/* Section Heading */
+.content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Profile Card */
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.profile-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-details h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.profile-details p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Overview Cards */
+.overview-cards {
+    display: flex;
+    justify-content: space-between; /* Ensure equal spacing between cards */
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: stretch; /* Ensures all cards are the same height */
+}
+
+.overview-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Allows content to stack vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    min-height: 120px; /* Ensures consistent height across cards */
+}
+
+.overview-card h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.overview-card p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Green and Red for Scores */
+.score-green {
+    color: #27ae60; /* Bright green for positive scores */
+    font-weight: bold;
+}
+
+.score-red {
+    color: #e74c3c; /* Bright red for negative scores */
+    font-weight: bold;
+}
+
+
+/* Feedback Section */
+.feedback-section {
+    margin-top: 30px;
+}
+
+.feedback-section h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feedback-box,
+.recommendation-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Graph Section */
+.graph {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: center;
+}
+#evolutionChart {
+    width: 100%;
+    max-height: 300px; /* Adjust graph height */
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.graph h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.toggle-sidebar {
+    display: none; /* Hidden by default */
+}
+
+/* Responsive Design */
+
+/* Small Devices (Mobile, screens ≤ 480px) */
+@media (max-width: 480px) {
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        margin: 0 auto;
+        padding: 15px;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: #f4f6f9; 
+    }
+
+    body {
+        display: block;
+        background-color: #f4f6f9;
+    }
+    
+    .sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: #1c1f26;
+        z-index: 1000;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+    }
+
+    .sidebar.open {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    /* Show toggle button */
+    .toggle-sidebar {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 15px;
+        background-color: #2c3e50;
+        color: white;
+        border: none;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1100;
+        cursor: pointer;
+    }
+
+    .toggle-sidebar:hover {
+        background-color: #1a242f;
+    }
+
+    .header {
+        padding: 10px;
+        justify-content: flex-end;
+    }
+
+    .user-info {
+        margin-top: 10px;
+    }
+
+    .user-info img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .profile-card {
+        align-items: center;
+    }
+
+    .overview-cards {
+        display: flex;
+        gap: 15px;
+        align-items: center; 
+        margin-top: 10px;
+    }
+
+    .overview-card {
+        width: 100%; 
+        padding: 15px;
+        text-align: center; 
+        border-radius: 8px; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        background-color: white; 
+    }
+
+    .overview-card h4{
+        font-size: 13px;
+    }
+
+    .recommendation-box, .feedback-box {
+        width: 100%;
+        margin: 10px auto; 
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .graph {
+        margin-top: 20px;
+    }
+
+    .logo{
+        margin-top:40px;
+    }
+}
+
+/* Medium Devices (Tablets, screens 481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    body {
+        background-color: #eef3f7; /* Keep background gray for tablets */
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        margin: 0 auto;
+        padding: 15px;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: #f4f6f9; 
+    }
+
+    .sidebar {
+        display: none;
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .toggle-sidebar {
+        display: block;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background-color: #2c3e50;
+        color: white;
+        border: none;
+        font-size: 14px;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1100;
+        border-radius: 5px;
+    }
+
+    .toggle-sidebar:hover {
+        background-color: #1a242f;
+    }
+    
+    .header {
+        padding: 10px;
+        justify-content: flex-end;
+    }
+
+    .user-info {
+        margin-top: 10px;
+    }
+
+    .logo{
+        margin-top:40px;
+    }
+
+    .profile-card {
+        flex-direction: row; /* Align items horizontally */
+    }
+
+    .overview-cards {
+        flex-direction: row; /* Align cards horizontally */
+        gap: 10px;
+    }
+
+    .overview-card {
+        width: 32%; /* Slightly smaller cards to fit */
+    }
+}
+
+/* Large Devices (Small Laptops, screens 769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        background-color: #eef3f7;
+    }
+
+    .main-content {
+        width: calc(100% - 275px);
+        margin-left: 265px;
+        padding: 20px;
+    }
+
+    .profile-card {
+        flex-direction: row;
+    }
+
+    .overview-cards {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .overview-card {
+        width: 30%;
+    }
+}
+

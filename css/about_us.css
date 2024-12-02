@@ -1,0 +1,128 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+  
+}
+.back-button:hover {
+    color: #7755ff
+}
+
+
+
+h1 {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.highlight {
+    color: #3C99BD;
+}
+
+
+.line {
+    width: 35%; /* Que ocupe todo el ancho del contenedor */
+    height: 2px; /* Ajusta el grosor de la línea */
+    background-color: #e0e0e0; /* Color gris claro */
+    margin-top: 10px; /* Espacio entre el texto y la línea */
+    text-align: center;
+    margin: 0 auto;
+    
+}
+.line1 {
+    width: 35%; /* Que ocupe todo el ancho del contenedor */
+    height: 2px; /* Ajusta el grosor de la línea */
+    background-color: #e0e0e0; /* Color gris claro */
+    margin-top: 10px; /* Espacio entre el texto y la línea */
+   
+    
+}
+
+.content {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%; 
+    text-align: center;
+    margin: 0 auto
+}
+
+.description {
+    background-color: #3C99BD;
+    color: white;
+    padding:15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0 auto
+}
+
+.image img {
+    width: 60%;
+    border-radius: 10px;
+}
+
+
+
+.container1 {
+    background-color: #3C99BD; /* Color de fondo azul claro */
+    color: #fff; /* Color de texto blanco */
+    text-align: center; /* Centra el contenido horizontalmente */
+    padding: 1px;
+    font-size: 14px;
+   
+}
+  
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+  
+.contact-info h2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    
+}
+  
+.contact-info h2 .left-title {
+    font-size: 20px; /* Adjust the font size as needed */
+}
+  
+  
+.contact-info p {
+    font-size: 15px; /* Adjust the font size as needed */
+    padding: 9px;
+}
+
+
+
+
